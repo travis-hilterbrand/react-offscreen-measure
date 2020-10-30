@@ -1,0 +1,9 @@
+#MeasureExample {
+  display: flex;
+  border: 1px solid tomato;
+
+  button {
+    flex-shrink: 1;
+    padding: 8px 16px;
+  }
+}

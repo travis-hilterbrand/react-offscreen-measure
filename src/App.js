@@ -1,11 +1,12 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 
-import TestComponent from './TestComponent';
+import MeasureExample from './MeasureExample';
+
 function App() {
   return (
     <div className="App">
-      <TestComponent />
+      <MeasureExample />
     </div>
   );
 }
