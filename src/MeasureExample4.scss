@@ -1,0 +1,22 @@
+#MeasureExample {
+  display: flex;
+  border: 1px solid tomato;
+
+  button {
+    display: flex;
+    flex-shrink: 1;
+    overflow: hidden;
+    max-width: 105px;
+    margin: 0 8px;
+    border: none;
+    padding: 8px 16px;
+
+    .button-label {
+      white-space: nowrap;
+      word-wrap: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+    }
+  }
+}
