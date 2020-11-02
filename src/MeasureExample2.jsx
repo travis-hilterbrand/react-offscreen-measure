@@ -16,9 +16,10 @@ const Button = forwardRef((props, ref) => {
 const MeasureButton = (props) => {
   const { ref, width } = useDimensions({
     polyfill: ResizeObserver,
+    useBorderBoxSize: false,
     onResize: ({ width }) => {
       if (typeof props.onResize === 'function') {
-        props.onResize(props.id, width);
+        props.onResize(props.id, width, ref.current.getBoundingClientRect().width);
       }
     },
   });
@@ -28,8 +29,9 @@ const MeasureButton = (props) => {
 
 const MeasureExample = () => {
   const [buttonSizes, setButtonSizes] = React.useState({});
-  const handleResize = (id, width) => {
-    console.log(`handleResize(${id}, ${width})`);
+  const handleResize = (id, width, clientWidth) => {
+    const widthAndPadding = width + 16 * 2;
+    console.log(`handleResize(${id}, ${widthAndPadding}, ${clientWidth})`);
     const newButtonSizes = clone(buttonSizes);
     newButtonSizes[id] = width;
     setButtonSizes(newButtonSizes);
